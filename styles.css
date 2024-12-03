@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* GENERAL PROPERTIES */
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: var(--white);
+
+    /* COLORS */
+    --white: #EFEFEF;
+    --doc-purple: #7244F9;
+    --soft-dark: #323232;
+    --black-magic: #0B0510;
+    --accent-orange: #ED932A;
+    --grey: #A0A0A0;
+    --bone: #E3DAC9;
+    --accent-blue: #2697FF;
+    --black: #1C1C1C;
+    --onyx: #030104;
+
+    /* Typography */
+    --headline-fontsize: 4rem;
+    --bold-fontweight : 700;
+    --h2-fontsize: 3rem;
+    --h3-fontsize: 2rem;
+    --h4-fontsize: 1.5rem;
+    --h5-fontsize: 1.5rem;
+    --body-fontsize: 1.125rem;
+    --button-fontsize: 1.125rem;
+    --overline-fontsize: 0.875rem;
+    --caption-fontsize: 0.875rem;
+    --subtitle-fontsize: 1.5rem;
+    --subtitle-weight: 700;
+}
+
+/* ------- GENERAL STYLES ------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.links a{
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--doc-purple); /* DocPurple */
+    transition: all 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+body {
+    background-color: var(--black-magic);
+}
+
+h1 {
+    font-size: var(--headline-fontsize);
+    font-weight: var(--bold-fontweight);
+}
+
+h2 {
+    font-size: var(--h2-fontsize);
+    font-weight: var(--bold-fontweight);
+    margin: 2rem 0;
+}
+
+h3 {
+    font-size: var(--h3-fontsize);
+    font-weight: var(--bold-fontweight);
+    margin: 1.5rem 0;
+}
+
+h4 {
+    font-size: var(--h4-fontsize);
+    font-weight: var(--bold-fontweight);
+    margin: 1.25rem 0;
+}
+
+h5 {
+    font-size: var(--h5-fontsize);
+    font-weight: var(--bold-fontweight);
+    margin: 1rem 0;
+}
+
+p {
+    font-size: var(--body-fontsize);
+    margin: 1rem 0;
+    line-height: 1.8;
+}
+
+.cta-btn {
+    background-color: var(--doc-purple);    
+    padding: 1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: var(--bold-fontweight);
+    transition: all 0.5s ease;
+    font-size: 1rem;
+}
+
+.cta-btn:hover {
+    background-color: var(--white);
+    color: var(--doc-purple);
+}
+
+.purple-accent {
+    color: var(--doc-purple);
+    font-weight: var(--bold-fontweight);
+}
+
+.subtitle {
+    font-size: var(--subtitle-fontsize);
+    font-weight: var(--subtitle-weight);
+}
