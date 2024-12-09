@@ -139,7 +139,8 @@ p {
 
 .hero {
     padding: 1rem 20% 4rem;
-    height: 500px;
+    height: max-content;
+    width: 100%;
     background: radial-gradient(
         ellipse 100% 200% at center top,
         rgba(69, 90, 100, 0.9), /* Inner color */
@@ -202,11 +203,17 @@ p {
 }
 
 .argument {
-    max-width: 65vh;
+    max-width: 800px;
 }
 
 .argument p {
-    margin: 0 0 8px;
+    margin: 0 0 0.5rem;
+}
+
+.arg-accent {
+    font-size: var(--headline-fontsize);
+    font-weight: var(--bold-fontweight);
+    color: var(--doc-purple);
 }
 
 /* ------ PME CONSULTING ------ */
@@ -217,7 +224,7 @@ p {
     gap: 4rem;
     justify-content: center;
     align-items: center;
-    padding: 100px 0;
+    padding: 100px 10%;
 }
 
 .pme-header h2 {
@@ -376,6 +383,9 @@ p {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ------ CLIENTS ------ */
@@ -396,6 +406,8 @@ p {
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ------ CTA BLADE ------ */
@@ -413,13 +425,6 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-}
-
-.cta-copy p {
-    margin: 0px;
-    font-size: var(--overline-fontsize);
-    text-align: center;
-    color: var(--grey);
 }
 
 .cta-copy h2 {
@@ -441,4 +446,155 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    /* ------ HERO ------ */
+    .hero {
+        padding: 1rem 10% 3rem;
+    }
+
+    @keyframes glow {
+        from {
+            background-size: 0% 0%;
+            background-position: center -100%; /* Hidden above */
+        }
+        to {
+            background-size: 150% 100%;
+            background-position: center top; /* Visible */
+        }
+    }
+
+    /* ------ ARGUMENTS ------ */
+    .arg {
+        padding: 32px 0;
+    }
+
+    .argument {
+        max-width: 60%;
+    }
+
+    /* ------ PME CONSULTING ------ */
+    .pme {
+        padding: 48px 5%;
+    }
+
+    .pme-container {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* ------ BENEFITS ------ */
+    .benefits {
+        padding: 48px 5%;
+        gap: 2rem;
+    }
+
+    /* ------ LUCRATIVE BIZ ------ */
+    .lucrative-container {
+        flex-direction: column;
+        max-width: 60%;
+    }
+
+    /* ------ SERVICES ------ */
+    .services {
+        padding: 48px 5%;
+    }
+
+    .services h2 {
+        text-align: center;
+    }
+
+    /* ------ ZENMKT ------ */
+    .zenMkt {
+        padding: 48px 5%;
+    }
+
+    /* ------ PLATFORMS ------ */
+
+    .platforms {
+        padding: 48px 5%;
+    }
+
+    /* ------ CLIENTS ------ */
+
+    .clients {
+        padding: 32px 5%;
+    }
+    /* ------ CTA BLADE ------ */
+
+    .cta-blade {
+        padding: 24px 5% 100px;
+    }
+
+    /* ------ FOOTER ------ */
+
+    footer {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    :root {
+        --headline-fontsize: 4rem;
+        --h2-fontsize: 2rem;
+        --h3-fontsize: 1.5rem;
+        --h4-fontsize: 1.25rem;
+        --h5-fontsize: 1.25rem;
+        --body-fontsize: 1rem;
+        --button-fontsize: 1rem;
+        --overline-fontsize: 0.75rem;
+        --caption-fontsize: 0.75rem;
+        --subtitle-fontsize: 1.25rem;
+        --subtitle-weight: bold;
+    }
+
+    .pme {
+        padding: 4rem 5%;
+    }
+
+    .lucrative-biz {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --headline-fontsize: 3rem;
+        --h2-fontsize: 1.5rem;
+        --h3-fontsize: 1.25rem;
+        --h4-fontsize: 1.125rem;
+        --h5-fontsize: 1.125rem;
+        --body-fontsize: 1rem;
+        --button-fontsize: 1rem;
+        --overline-fontsize: 0.5rem;
+        --caption-fontsize: 0.5rem;
+        --subtitle-fontsize: 1.125rem;
+        --subtitle-weight: bold;
+    }
+
+    .pme-item {
+        max-width: 300px;
+    }
+
+    .benefits-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .zenMkt-reasons {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
